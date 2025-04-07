@@ -100,6 +100,47 @@ body {
     max-width: 90%;
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        rgba(255, 255, 255, 0.5),
+        transparent, 
+        transparent, 
+        transparent
+    );
+    animation: rotate 12s linear infinite;
+    z-index: -1;
+}
+
+.hero-content::after {
+    content: '';
+    position: absolute;
+    inset: 1px; /* Thinner inner border */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 9px;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .hero-content h1 {
