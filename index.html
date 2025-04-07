@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter Hughes - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Hunter Hughes</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hunter Hughes</h1>
+            <p>Software Engineer</p>
+            <div class="hero-contact">
+                <p><i class="fas fa-envelope"></i> hughesxh@gmail.com</p>
+                <p><i class="fas fa-phone"></i> (714) 904-5331</p>
+                <p><i class="fas fa-map-marker-alt"></i> Fullerton, CA 92831</p>
+            </div>
+            <a href="Hunter_Hughes_Resume.pdf" class="btn" target="_blank">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-top-section">
+                        <div class="education">
+                            <h3>Education</h3>
+                            <p><strong>Bachelor of Science in Computer Science</strong></p>
+                            <p>California State University, Fullerton</p>
+                            <p>August 2022 - Present</p>
+                            <p>Fullerton, CA</p>
+                        </div>
+                        <div class="coursework">
+                            <h3>Relevant Coursework</h3>
+                            <ul>
+                                <li>Software Engineering: Agile methodologies, software development lifecycle, open-source development</li>
+                                <li>Operating Systems & Systems Programming: Operating system concepts, computer organization & assembly language</li>
+                                <li>Databases & File Structures: SQL, database design, file structures</li>
+                                <li>Cybersecurity & Networking: Fundamentals of cybersecurity, computer networking</li>
+                                <li>Artificial Intelligence & Machine Learning: AI principles, introduction to machine learning</li>
+                                <li>Game & Mobile Development: Game design fundamentals, mobile development & programming</li>
+                                <li>Mathematics for Computer Science: Discrete math, probability & statistics, calculus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Adept</h4>
+                                <ul>
+                                    <li>C</li>
+                                    <li>C++</li>
+                                    <li>Python</li>
+                                    <li>mIRC</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Familiar</h4>
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Java</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-bottom-section">
+                        <div class="profile-section">
+                            <div class="profile-picture">
+                                <img src="profile.png" alt="Hunter Hughes">
+                            </div>
+                        </div>
+                        <div class="about-description">
+                            <p>"Whatever doesn't kill you makes you stronger" - but if I can code the issue away, I will.<br>
+                                I first realized the power of automation after spending 30 hours straight with my friend and 8 others, ensuring their Christmas giveaway livestream ran smoothly. That experience made one thing clear: some problems are better solved with code. Ever since, I've been passionate about finding everyday inefficiencies and building solutions that make life easier.<br>
+                                I'm a Computer Science student at CSUF looking to expand my learning into a professional setting. Problem solving drives me, and while I have a solid foundation, I recognize there's always more to learn, both in software engineering and beyond. My goal is to contribute meaningfully to my future team, not just by applying my skills, but by continuously improving and collaborating with those around me.<br>
+                                I'm excited to connect with like minded professionals and explore opportunities where I can add value while growing as a developer. Let's build something great together!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <!-- RaffleBot Project -->
+            <div class="project-card">
+                <div class="image-carousel">
+                    <div class="carousel-container">
+                        <img src="rafflebotscreenshot1.PNG" alt="RaffleBot Screenshot 1" class="carousel-image active" id="rafflebot1">
+                        <img src="rafflebotscreenshot2.PNG" alt="RaffleBot Screenshot 2" class="carousel-image" id="rafflebot2">
+                        <button class="carousel-btn prev" onclick="changeImage('rafflebot', -1)">❮</button>
+                        <button class="carousel-btn next" onclick="changeImage('rafflebot', 1)">❯</button>
+                    </div>
+                </div>
+                <h3>RaffleBot - Twitch Giveaway Automation</h3>
+                <p class="project-status">Capstone Project</p>
+                <p>A middleman service for Twitch content creators to streamline giveaway hosting. Features automated participant tracking and randomized winner selection with seamless Twitch API integration.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            <!-- Meal Planning App -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Meal Planning & Budgeting App</h3>
+                    <p class="project-status">In Progress</p>
+                </div>
+                <p>A meal-planning tool that incorporates cost tracking, allowing users to create budget-friendly meal plans by dragging and organizing "meal blocks" for better visualization.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            <!-- Content Hub -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Personalized Content Hub</h3>
+                    <p class="project-status">In Progress</p>
+                </div>
+                <p>A centralized tracking website that aggregates data from various sources (episodes, chapters, streams, etc.) to eliminate the need for manually checking multiple platforms.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://github.com/hunter-hues" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/hunter-hughes-65014120a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hunter Hughes. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
