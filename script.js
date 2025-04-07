@@ -62,7 +62,7 @@ if (contactForm) {
             submitButton.textContent = 'Sending...';
             
             // Send data to backend
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,15 +71,17 @@ if (contactForm) {
             });
             
             const data = await response.json();
+            console.log('Server response:', data);
             
             if (data.success) {
                 alert('Thank you for your message! I will get back to you soon.');
                 contactForm.reset();
             } else {
-                alert('Sorry, there was an error sending your message. Please try again.');
+                console.error('Server error:', data.message);
+                alert(`Error: ${data.message}`);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Network error:', error);
             alert('Sorry, there was an error sending your message. Please try again.');
         } finally {
             // Reset button state
