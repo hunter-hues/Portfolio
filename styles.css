@@ -411,16 +411,25 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     background-color: #007bff;
     color: white;
+    border: none;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+.btn.disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Social Links */
