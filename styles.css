@@ -100,46 +100,46 @@ body {
     max-width: 90%;
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.hero-content::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-        transparent, 
-        transparent, 
-        transparent, 
-        rgba(255, 255, 255, 0.5),
-        transparent, 
-        transparent, 
-        transparent
-    );
-    animation: rotate 12s linear infinite;
-    z-index: -1;
-}
-
+/* Glowing border effect */
 .hero-content::after {
     content: '';
     position: absolute;
-    inset: 1px; /* Thinner inner border */
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 9px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 25%, 
+        rgba(255, 255, 255, 0.7) 50%, 
+        transparent 75%, 
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    pointer-events: none;
+    border-radius: 11px;
     z-index: -1;
+    animation: shine 8s linear infinite;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
 }
 
-@keyframes rotate {
+@keyframes shine {
     0% {
-        transform: rotate(0deg);
+        background-position: 200% 0;
     }
     100% {
-        transform: rotate(360deg);
+        background-position: -200% 0;
     }
 }
 
