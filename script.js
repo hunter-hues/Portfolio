@@ -25,81 +25,10 @@ function startCarousel(projectId) {
     }, 5000);
 }
 
-// Background GIF animation control
-class BackgroundAnimation {
-    constructor(elementId) {
-        this.element = document.getElementById(elementId);
-        if (!this.element) return;
-        
-        // Create canvas for the GIF animation
-        this.setupAnimation();
-    }
-    
-    setupAnimation() {
-        // Load the original GIF
-        const img = new Image();
-        img.src = this.element.src;
-        
-        // Store original image for reference
-        this.originalImg = img;
-        
-        // Set animation speed (higher = slower)
-        this.animationSpeed = 150; // milliseconds
-        
-        // Set direction (1 = forward, -1 = reverse)
-        this.direction = 1;
-        
-        // Start animation when image is loaded
-        img.onload = () => {
-            // Slow down the GIF by adding a CSS animation
-            this.element.style.animationDuration = '3s';
-            this.element.style.animationTimingFunction = 'linear';
-            
-            // Toggle direction every 5 seconds
-            setInterval(() => {
-                this.toggleDirection();
-            }, 5000);
-        };
-    }
-    
-    toggleDirection() {
-        // Toggle the playback direction
-        if (this.direction === 1) {
-            // Play in reverse
-            this.element.style.animationDirection = 'reverse';
-            this.direction = -1;
-        } else {
-            // Play forward
-            this.element.style.animationDirection = 'normal';
-            this.direction = 1;
-        }
-    }
-}
-
-// Start carousel and background animation when the page loads
+// Start carousel when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     startCarousel('rafflebot');
-    
-    // Initialize background animation
-    new BackgroundAnimation('hero-background');
-    
-    // Add CSS animation to the background image
-    const backgroundElement = document.getElementById('hero-background');
-    if (backgroundElement) {
-        backgroundElement.style.animation = 'slowMotion 3s linear infinite';
-    }
 });
-
-// Add the CSS animation directly through JavaScript
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slowMotion {
-        0% { transform: scale(1.05); }
-        50% { transform: scale(1); }
-        100% { transform: scale(1.05); }
-    }
-`;
-document.head.appendChild(style);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
